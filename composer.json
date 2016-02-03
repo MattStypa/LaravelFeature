@@ -1,6 +1,6 @@
 {
     "name": "dose/laravelfeature",
-    "description": "Laravel implementation of Dose/Feature.",
+    "description": "Rampup and AB testing library inspired for Laravel.",
     "license": "MIT",
     "keywords": [
         "laravel",
