@@ -1,0 +1,36 @@
+{
+    "name": "dose/laravelfeature",
+    "description": "Laravel implementation of Dose/Feature.",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "ab testing",
+        "feature",
+        "rampup"
+    ],
+    "homepage": "https://github.com/spartzinc/laravelfeature/",
+    "authors": [
+        {
+            "name": "Matt Stypa",
+            "email": "mstypa@mattstypa.com",
+            "homepage": "http://MattStypa.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.* || 5.*",
+        "illuminate/config": "4.* || 5.*",
+        "illuminate/session": "4.* || 5.*",
+        "illuminate/http": "4.* || 5.*",
+        "dose/feature": "1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "fabpot/php-cs-fixer": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dose\\LaravelFeature\\": "src/"
+        }
+    }
+}
