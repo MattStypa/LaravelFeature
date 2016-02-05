@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - 5.5
+  - 5.6
+  - 7.0
+  - hhvm
+
+env:
+  - LARAVEL_VERSION=4.*
+  - LARAVEL_VERSION=latest
+
+install:
+  - if [[ $LARAVEL_VERSION = 'latest' ]]; then composer install; else composer require laravel/framework:${LARAVEL_VERSION}; fi
+
