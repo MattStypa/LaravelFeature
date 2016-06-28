@@ -87,34 +87,75 @@ This is disabled by default. You may control who can use the URL override by def
 ### features.php
 All your features are defined here.
 
-#### Explicitly defined odds
-```
-'example_feature' => [
-    'variant_1' => 25,
-    'variant_2' => 25,
-],
-```
-In this example variant_1 and variant_2 will be selected 25% of the time each and no variant will be selected 50% of the time.
+There is a ton of flexibility in defining features. We will start with the most verbose and then work down.
 
-You can also omit the odds. In this case these variants will be auto-scaled to fill remaining probability.
-```
-'example_feature' => [
-    'variant_1' => 20,
-    'variant_2',
-    'variant_3',
-],
-```
-In this case, variant_1 will be select 20% of the time and variant_2 and variant_3 40% of the time each.
+Each feature can have any number of variants with each variant defining it's own odds.
 
-In order to specify a simple on/off feature just add a single variant.
 ```
-'example_feature' => [
-    'on' => 50,
+'feature' => [
+    'variant_a' => 25,
+    'variant_b' => 25,
+    'variant_c' => 50,
 ],
 ```
+
+In the above example, each variant has the specified chance of being selected. Variants with odds below 0 are normalized to 0. The variants are processed top to bottom. If the sum of odds exceeds 100 the feature is saturated and any variants above that threshold have no chance of being selected.
+
+```
+'feature' => [
+    'variant_a' => 100,
+    'variant_b' => 25,
+    'variant_c' => 50,
+],
+```
+
+The above feature will always return variant_a.
+
+You can omit the odds and just specify the variants. In this case, the variants are evenly spread out.
+
+```
+'feature' => [
+    'variant_a',
+    'variant_b',
+],
+```
+
+In this case, both variants have 50% chance of being selected.
+
+These approaches can be mixed. It is important to note that variants with specified odds will be processed first and
+then any remaining odds are distributed among the auto-scaled variants.
+
+```
+'feature' => [
+    'variant_a' => 50,
+    'variant_b',
+    'variant_c',
+],
+```
+
+The first variant has 50% chance of coming up while the other two have 25% chance each.
+
+To specify a simple ON/OFF feature we just include a single variant.
+
+```
+'feature' => [
+    'enabled' => 100,
+],
+```
+
+This feature is always on. We can adjust the odds to turn it off completely or achieve a ramp-up functionality.
+
+It is also possible to shorten the above example by just defining the odds for the feature itself.
+
+```
+'feature' => 50,
+```
+
+This feature will be on for 50% of the users.
 
 ## URL override
 If the URL override is enabled you can force a particular variant by specifying it in the URL
+
 ```
 ?features=example_feature:variant_1
 ```
