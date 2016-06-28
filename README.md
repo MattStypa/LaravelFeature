@@ -6,7 +6,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/dose/laravelfeature/v/unstable)](https://packagist.org/packages/dose/laravelfeature)
 [![License](https://poser.pugx.org/dose/laravelfeature/license)](https://packagist.org/packages/dose/laravelfeature)
 
-Rampup and AB testing library inspired for Laravel.
+Rampup and AB testing library inspired by Etsy\Feature for Laravel.
 
 ## How to use
 After you have added this package to your composer file you will need to register it's Service Provider.
