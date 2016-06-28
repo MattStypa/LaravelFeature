@@ -1,6 +1,6 @@
 # LaravelFeature
 
-[![Build Status](https://travis-ci.org/SpartzInc/LaravelFeature.svg?branch=master)](https://travis-ci.org/SpartzInc/LaravelFeature)
+[![Build Status](https://travis-ci.org/MattStypa/LaravelFeature.svg?branch=master)](https://travis-ci.org/SpartzInc/LaravelFeature)
 [![Latest Stable Version](https://poser.pugx.org/dose/laravelfeature/v/stable)](https://packagist.org/packages/dose/laravelfeature)
 [![Total Downloads](https://poser.pugx.org/dose/laravelfeature/downloads)](https://packagist.org/packages/dose/laravelfeature)
 [![Latest Unstable Version](https://poser.pugx.org/dose/laravelfeature/v/unstable)](https://packagist.org/packages/dose/laravelfeature)
